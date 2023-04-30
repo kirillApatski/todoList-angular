@@ -1,0 +1,19 @@
+<div class="board-wrapper">
+  <div class="add-new-todos">
+    <mat-form-field class="example-form-field">
+      <mat-label>Enter a name</mat-label>
+      <input matInput type="text" [(ngModel)]="titleTodo">
+      <button *ngIf="titleTodo" matSuffix mat-icon-button aria-label="Clear" (click)="titleTodo=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+    <button (click)="createTodoHandler()" mat-fab color="primary">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+  <div class="board-content">
+
+    <todo-todo-list *ngFor="let todo of todos$ | async" [todo]="todo">
+    </todo-todo-list>
+  </div>
+</div>

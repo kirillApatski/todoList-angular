@@ -1,0 +1,15 @@
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+todo-header {
+  flex: 0 0 auto;
+}
+.content {
+  flex: 1 0 auto;
+}
+todo-footer {
+  flex: 0 0 auto;
+
+}

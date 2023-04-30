@@ -1,0 +1,34 @@
+<mat-card style="width: 300px; padding: 20px">
+  <mat-card-header
+    style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid">
+    <mat-card-title>{{todo.title}}</mat-card-title>
+    <button (click)="deleteTodoHandler(todo.id)" mat-icon-button color="primary">
+      <mat-icon>backspace</mat-icon>
+    </button>
+  </mat-card-header>
+  <div style="text-align: center; margin-top: 20px;">
+    <mat-form-field style="width: 200px" class="example-form-field">
+      <mat-label>Enter a name</mat-label>
+      <input matInput type="text">
+      <button *ngIf="titleTask" matSuffix mat-icon-button aria-label="Clear"
+              (click)="titleTask=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+    <button color="primary" mat-icon-button>
+      <mat-icon>add_circle</mat-icon>
+    </button>
+  </div>
+  <mat-card-content >
+    <mat-checkbox></mat-checkbox>
+    <span>task</span>
+    <button mat-icon-button color="primary">
+      <mat-icon>backspace</mat-icon>
+    </button>
+  </mat-card-content>
+  <div class="button-box">
+    <button mat-raised-button color="primary">All</button>
+    <button mat-button color="primary">Active</button>
+    <button mat-button color="primary">Completed</button>
+  </div>
+</mat-card>
