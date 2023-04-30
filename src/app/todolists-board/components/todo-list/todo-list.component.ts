@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Todo } from 'src/app/todolists-board/models/todos.model';
 
 @Component({
@@ -9,13 +9,8 @@ import { Todo } from 'src/app/todolists-board/models/todos.model';
 export class TodoListComponent implements OnInit {
   @Input() todo!: Todo;
   @Input() titleTodo!: string;
-  @Output() deleteTodo = new EventEmitter<string>();
   titleTask: string = '';
   constructor() {}
 
   ngOnInit() {}
-
-  deleteTodoHandler(todoId: string) {
-    this.deleteTodo.emit(todoId);
-  }
 }

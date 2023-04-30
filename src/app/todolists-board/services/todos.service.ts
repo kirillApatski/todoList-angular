@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environments.dev';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, map } from 'rxjs';
 import { Todo } from 'src/app/todolists-board/models/todos.model';
+import { CommonResponse } from 'src/app/core/models/core.models';
 
 @Injectable({
   providedIn: 'root',
@@ -15,9 +16,18 @@ export class TodosService {
       this.todos$.next(todos);
     });
   }
-  createTodo(todoTitle: string) {
-    this.http.post<Todo>(`${environment.baseUrl}/todo-lists`, { todoTitle }).subscribe((todo) => {
-      this.todos$.next([...this.todos$.value, todo]);
-    });
+  addTodo(todoTitle: string) {
+    this.http
+      .post<CommonResponse<{ item: Todo }>>(`${environment.baseUrl}/todo-lists`, {
+        title: todoTitle,
+      })
+      .pipe(
+        map((res) => {
+          return [...this.todos$.getValue(), res.data.item];
+        })
+      )
+      .subscribe((todos) => {
+        this.todos$.next(todos);
+      });
   }
 }

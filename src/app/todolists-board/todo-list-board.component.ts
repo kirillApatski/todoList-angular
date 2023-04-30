@@ -17,7 +17,8 @@ export class TodoListBoardComponent implements OnInit {
     this.todos$ = this.todosService.todos$;
     this.todosService.getTodos();
   }
-  createTodoHandler() {
-    this.todosService.createTodo(this.titleTodo);
+  addTodoHandler() {
+    this.todosService.addTodo(this.titleTodo);
+    this.titleTodo = '';
   }
 }
