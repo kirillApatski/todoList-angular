@@ -13,7 +13,7 @@
   </div>
   <div class="board-content">
 
-    <todo-todo-list *ngFor="let todo of todos$ | async" [todo]="todo">
+    <todo-todo-list *ngFor="let todo of todos$ | async" [todo]="todo" (removeTodoEvent)="removeTodo($event)">
     </todo-todo-list>
   </div>
 </div>
