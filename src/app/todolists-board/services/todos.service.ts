@@ -42,4 +42,20 @@ export class TodosService {
         this.todos$.next(todos);
       });
   }
+  updateTodoTitle(data: { todoId: string; titleTodo: string }) {
+    this.http
+      .put<CommonResponse>(`${environment.baseUrl}/todo-lists/${data.todoId}`, {
+        title: data.titleTodo,
+      })
+      .pipe(
+        map(() => {
+          return this.todos$
+            .getValue()
+            .map((tl) => (tl.id === data.todoId ? { ...tl, title: data.titleTodo } : tl));
+        })
+      )
+      .subscribe((todos) => {
+        this.todos$.next(todos);
+      });
+  }
 }

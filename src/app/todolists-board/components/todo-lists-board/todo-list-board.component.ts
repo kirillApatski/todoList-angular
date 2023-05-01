@@ -25,4 +25,8 @@ export class TodoListBoardComponent implements OnInit {
   removeTodo(todoId: string) {
     this.todosService.removeTodo(todoId);
   }
+
+  editTodo(dataTodo: { todoId: string; titleTodo: string }) {
+    this.todosService.updateTodoTitle(dataTodo);
+  }
 }

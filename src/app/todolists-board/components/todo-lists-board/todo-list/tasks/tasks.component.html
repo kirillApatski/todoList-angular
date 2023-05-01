@@ -1,0 +1,14 @@
+<mat-form-field style="width: 200px" class="example-form-field">
+  <mat-label>Enter a name</mat-label>
+  <input matInput type="text" [(ngModel)]="titleTask" (keyup.enter)="addTaskHandler()">
+  <button *ngIf="titleTask" matSuffix mat-icon-button aria-label="Clear"
+          (click)="titleTask=''">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-form-field>
+<button (click)="addTaskHandler()" color="primary" mat-icon-button>
+  <mat-icon>add_circle</mat-icon>
+</button>
+<mat-card-content *ngFor="let task of tasks$ | async">
+  <todo-task [task]="task"></todo-task>
+</mat-card-content>
