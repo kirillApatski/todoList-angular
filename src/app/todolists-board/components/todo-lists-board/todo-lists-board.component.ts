@@ -8,7 +8,7 @@ import { Todo } from 'src/app/todolists-board/models/todos.model';
   templateUrl: './todo-lists-board.component.html',
   styleUrls: ['./todo-lists-board.component.scss'],
 })
-export class TodoListBoardComponent implements OnInit {
+export class TodoListsBoardComponent implements OnInit {
   todos$!: Observable<Todo[]>;
   constructor(private todosService: TodosService) {}
   titleTodo: string = '';

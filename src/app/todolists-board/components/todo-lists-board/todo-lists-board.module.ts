@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { TodoListsBoardRoutingModule } from 'src/app/todolists-board/components/todo-lists-board/todo-lists-board-routing.module';
 import { FormsModule } from '@angular/forms';
-import { TodoListBoardComponent } from 'src/app/todolists-board/components/todo-lists-board/todo-list-board.component';
+import { TodoListsBoardComponent } from 'src/app/todolists-board/components/todo-lists-board/todo-lists-board.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -15,7 +15,7 @@ import { TasksComponent } from './todo-list/tasks/tasks.component';
 import { TaskComponent } from './todo-list/tasks/task/task.component';
 
 @NgModule({
-  declarations: [TodoListBoardComponent, TodoListComponent, TasksComponent, TaskComponent],
+  declarations: [TodoListsBoardComponent, TodoListComponent, TasksComponent, TaskComponent],
   imports: [
     CommonModule,
     TodoListsBoardRoutingModule,

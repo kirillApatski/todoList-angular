@@ -5,7 +5,7 @@ export interface GetTasksResponse {
 }
 export interface Task {
   id: string;
-  todoListOd: string;
+  todoListId: string;
   order: number;
   addedDate: string;
   title: string;

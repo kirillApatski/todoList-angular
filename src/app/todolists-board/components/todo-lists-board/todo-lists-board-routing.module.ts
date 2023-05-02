@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TodoListBoardComponent } from 'src/app/todolists-board/components/todo-lists-board/todo-list-board.component';
+import { TodoListsBoardComponent } from 'src/app/todolists-board/components/todo-lists-board/todo-lists-board.component';
 
-const routes: Routes = [{ path: '', component: TodoListBoardComponent }];
+const routes: Routes = [{ path: '', component: TodoListsBoardComponent }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

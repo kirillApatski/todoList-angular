@@ -10,5 +10,5 @@
   <mat-icon>add_circle</mat-icon>
 </button>
 <mat-card-content *ngFor="let task of tasks$ | async">
-  <todo-task [task]="task"></todo-task>
+  <todo-task [task]="task" (removeTaskEvent)="removeTask($event)"></todo-task>
 </mat-card-content>
