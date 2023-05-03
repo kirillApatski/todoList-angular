@@ -14,7 +14,6 @@ export class TasksComponent implements OnInit {
 
   constructor(private tasksService: TasksService) {}
   titleTask = '';
-
   ngOnInit() {
     this.tasks$ = this.tasksService.tasks$.pipe(
       map((tasks) => {
